@@ -30,4 +30,4 @@ func checkAge(age int) (string, bool) {
 	return "Слышь тебе сюда нельзя!", false
 }
 
-// видео 45:00
+// видео 1:10:00
