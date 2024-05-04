@@ -35,6 +35,8 @@ func finMin(nums ...int) int {
 	return min
 }
 
+// видео 1:34:40
+
 // func calendar(day string) (string, error) {
 // 	switch day {
 // 	case "пн":
@@ -73,5 +75,3 @@ func finMin(nums ...int) int {
 
 // 	return "Слышь тебе сюда нельзя!", errors.New("you are too young for this")
 // }
-
-// видео 1:19:00
