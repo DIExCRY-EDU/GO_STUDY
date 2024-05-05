@@ -1,44 +1,64 @@
 package main
 
-// видео 1:34:40
+import (
+	"fmt"
+)
 
-import "fmt"
+// видео 1:34:40
+// про указатели подробнее прочитать в книге "Грокаем алгоритмы"
 
 func main() {
-	// name := "Max"
-	// age := 52
-	// new_m := sayHello(name, age)
-	// mes, err := checkAge(age)
-	// if err != nil {
-	// 	log.Fatal(err)
-	// }
-	// printMessage(new_m)
-	// printMessage(mes)
+	// message := "Скоро я буду Backend программистом"
+	// fmt.Println(message)
+	// printMessage(&message)
+	// fmt.Println(message)
 
-	// dayOfweek := "asdad"
-	// fmt.Println(calendar(dayOfweek))
+	number := 5
+	var p *int = &number
 
-	// fmt.Println(finMin(1, 23, 23432, 0, -1, 1241))
+	fmt.Println(*p)
+	fmt.Println(&number)
 
-	// func() {
-	// 	fmt.Println("Анонимная функция")
-	// }()
-
-	inc := increment()
-	fmt.Println(inc())
-	fmt.Println(inc())
-	fmt.Println(inc())
-	fmt.Println(inc())
-
+	*p = 10
+	fmt.Println(number)
 }
 
-func increment() func() string {
-	count := 0
-	return func() string {
-		count++
-		return fmt.Sprintf("Вызов функции increment(), count равен %d", count)
-	}
-}
+// func printMessage(message *string) {
+// 	*message += " (из функции printMessage() )"
+// }
+
+// name := "Max"
+// age := 52
+// new_m := sayHello(name, age)
+// mes, err := checkAge(age)
+// if err != nil {
+// 	log.Fatal(err)
+// }
+// printMessage(new_m)
+// printMessage(mes)
+
+// dayOfweek := "asdad"
+// fmt.Println(calendar(dayOfweek))
+
+// fmt.Println(finMin(1, 23, 23432, 0, -1, 1241))
+
+// func() {
+// 	fmt.Println("Анонимная функция")
+// }()
+
+// inc := increment()
+// fmt.Println(inc())
+// fmt.Println(inc())
+// fmt.Println(inc())
+// fmt.Println(inc())
+
+// func increment() func() string {
+// 	count := 0
+// 	return func() string {
+// 		count++
+// 		return fmt.Sprintf("Вызов функции increment(), count равен %d", count)
+// 	}
+// }
 
 // func finMin(nums ...int) int {
 // 	if len(nums) == 0 {
