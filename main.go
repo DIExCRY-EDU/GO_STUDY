@@ -1,5 +1,7 @@
 package main
 
+// видео 1:34:40
+
 import "fmt"
 
 func main() {
@@ -12,30 +14,47 @@ func main() {
 	// }
 	// printMessage(new_m)
 	// printMessage(mes)
+
 	// dayOfweek := "asdad"
 	// fmt.Println(calendar(dayOfweek))
 
-	fmt.Println(finMin(1, 23, 23432, 0, -1, 1241))
+	// fmt.Println(finMin(1, 23, 23432, 0, -1, 1241))
+
+	// func() {
+	// 	fmt.Println("Анонимная функция")
+	// }()
+
+	inc := increment()
+	fmt.Println(inc())
+	fmt.Println(inc())
+	fmt.Println(inc())
+	fmt.Println(inc())
 
 }
 
-func finMin(nums ...int) int {
-	if len(nums) == 0 {
-		return 0
+func increment() func() string {
+	count := 0
+	return func() string {
+		count++
+		return fmt.Sprintf("Вызов функции increment(), count равен %d", count)
 	}
-
-	min := nums[0]
-
-	for _, i := range nums {
-		if i < min {
-			min = i
-		}
-	}
-
-	return min
 }
 
-// видео 1:34:40
+// func finMin(nums ...int) int {
+// 	if len(nums) == 0 {
+// 		return 0
+// 	}
+
+// 	min := nums[0]
+
+// 	for _, i := range nums {
+// 		if i < min {
+// 			min = i
+// 		}
+// 	}
+
+// 	return min
+// }
 
 // func calendar(day string) (string, error) {
 // 	switch day {
