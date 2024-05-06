@@ -1,27 +1,63 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-// видео 2:00:40
+// видео 2:29:00
 // про указатели подробнее прочитать в книге "Грокаем алгоритмы"
+// effective go
 
 func main() {
-	// message := "Скоро я буду Backend программистом"
-	// fmt.Println(message)
-	// printMessage(&message)
-	// fmt.Println(message)
+	matrix := make([][]int, 10)
 
-	number := 5
-	var p *int = &number
+	// for i := 0; i < 10; i++ {
+	// 	for j := 0; j < 10; j++ {
+	// 		matrix[j] = make([]int, 10)
+	// 		matrix[j][i] = 1
+	// 	}
+	// 	fmt.Println(matrix[i])
+	// }
 
-	fmt.Println(*p)
-	fmt.Println(&number)
+	for i := 0; i < 10; i++ {
+		matrix[i] = make([]int, 10)
+		matrix[i][i] = 1
+		fmt.Println(matrix[i])
+	}
 
-	*p = 10
-	fmt.Println(number)
 }
+
+// var messages [3]string = [3]string{"1", "2", "3"} // messages := [3]string{"1", "2", "3"}
+
+// messages := make([]string, 100)
+// messages = append(messages, "101")
+// messages = append(messages, "7")
+// messages = append(messages, "8")
+// messages = append(messages, "9")
+// messages = append(messages, "10")
+// fmt.Println(len(messages))
+// fmt.Println(cap(messages))
+
+// func printMessages(messages []string) error {
+// 	if len(messages) == 0 {
+// 		return errors.New("empty arr of messages")
+// 	}
+// 	messages[1] = "5"
+// 	fmt.Println(messages)
+// 	return nil
+// }
+
+// message := "Скоро я буду Backend программистом"
+// fmt.Println(message)
+// printMessage(&message)
+// fmt.Println(message)
+
+// number := 5
+// var p *int = &number
+
+// fmt.Println(*p)
+// fmt.Println(&number)
+
+// *p = 10
+// fmt.Println(number)
 
 // func printMessage(message *string) {
 // 	*message += " (из функции printMessage() )"
