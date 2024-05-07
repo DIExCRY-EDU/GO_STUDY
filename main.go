@@ -1,13 +1,15 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // видео 2:29:00
 // про указатели подробнее прочитать в книге "Грокаем алгоритмы"
 // effective go
 
 func main() {
-	matrix := make([][]int, 10)
+	matrix := make([][]string, 10)
 
 	// for i := 0; i < 10; i++ {
 	// 	for j := 0; j < 10; j++ {
@@ -18,8 +20,10 @@ func main() {
 	// }
 
 	for i := 0; i < 10; i++ {
-		matrix[i] = make([]int, 10)
-		matrix[i][i] = 1
+		matrix[i] = make([]string, 10)
+		for j := 0; j < 10; j++ {
+			matrix[i][j] = fmt.Sprintf("%d%d", i, j)
+		}
 		fmt.Println(matrix[i])
 	}
 
