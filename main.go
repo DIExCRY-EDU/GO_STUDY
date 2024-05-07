@@ -1,33 +1,48 @@
 package main
 
-import (
-	"fmt"
-)
+import "fmt"
 
-// видео 2:29:00
+// видео 2:42:40
 // про указатели подробнее прочитать в книге "Грокаем алгоритмы"
 // effective go
 
 func main() {
-	matrix := make([][]string, 10)
+	messages := []string{
+		"1 message",
+		"2 message",
+		"3 message",
+		"4 message",
+	}
 
-	// for i := 0; i < 10; i++ {
-	// 	for j := 0; j < 10; j++ {
-	// 		matrix[j] = make([]int, 10)
-	// 		matrix[j][i] = 1
-	// 	}
-	// 	fmt.Println(matrix[i])
-	// }
-
-	for i := 0; i < 10; i++ {
-		matrix[i] = make([]string, 10)
-		for j := 0; j < 10; j++ {
-			matrix[i][j] = fmt.Sprintf("%d%d", i, j)
-		}
-		fmt.Println(matrix[i])
+	for i, _ := range messages {
+		fmt.Println(i)
 	}
 
 }
+
+// matrix := make([][]string, 5)
+
+// for i := 0; i < 10; i++ {
+// 	for j := 0; j < 10; j++ {
+// 		matrix[j] = make([]int, 10)
+// 		matrix[j][i] = 1
+// 	}
+// 	fmt.Println(matrix[i])
+// }
+// count := 0
+// for i := 0; i < 5; i++ {
+// 	matrix[i] = make([]string, 5)
+// 	for j := 0; j < 5; j++ {
+// 		if i == j {
+// 			matrix[i][j] = "_"
+// 		} else {
+// 			matrix[i][j] = fmt.Sprintf("%d%d", i, j)
+// 		}
+// 		count++
+// 	}
+// 	fmt.Println(matrix[i])
+// }
+// fmt.Println(count)
 
 // var messages [3]string = [3]string{"1", "2", "3"} // messages := [3]string{"1", "2", "3"}
 
