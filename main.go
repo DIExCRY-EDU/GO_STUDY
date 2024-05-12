@@ -9,27 +9,39 @@ import (
 // effective go
 
 func main() {
-	defer handlePanic()
-
-	messages := []string{
-		"одын",
-		"двэ",
-		"тры",
-		"чытырэ",
+	users := map[int]string{
+		1: "Max",
+		2: "Andrew",
+		3: "Nastya",
 	}
+	name, exists := users[5]
 
-	messages[4] = "пйат"
-
-	fmt.Println(messages)
+	if exists {
+		fmt.Println(fmt.Sprintf("Пользователь %s существует!", name))
+	} else {
+		fmt.Println("Такой польззователь не существует")
+	}
 
 }
 
-func handlePanic() {
-	if r := recover(); r != nil {
-		fmt.Println("Выполнилась handlePanic()")
-		fmt.Println(r)
-	}
-}
+// defer handlePanic()
+
+// messages := []string{
+// 	"одын",
+// 	"двэ",
+// 	"тры",
+// 	"чытырэ",
+// }
+
+// messages[4] = "пйат"
+
+// fmt.Println(messages)
+// func handlePanic() {
+// 	if r := recover(); r != nil {
+// 		fmt.Println("Выполнилась handlePanic()")
+// 		fmt.Println(r)
+// 	}
+// }
 
 // matrix := make([][]string, 5)
 
