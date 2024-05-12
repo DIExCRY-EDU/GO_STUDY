@@ -1,23 +1,34 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
 // видео 2:42:40
 // про указатели подробнее прочитать в книге "Грокаем алгоритмы"
 // effective go
 
 func main() {
+	defer handlePanic()
+
 	messages := []string{
-		"1 message",
-		"2 message",
-		"3 message",
-		"4 message",
+		"одын",
+		"двэ",
+		"тры",
+		"чытырэ",
 	}
 
-	for i, _ := range messages {
-		fmt.Println(i)
-	}
+	messages[4] = "пйат"
 
+	fmt.Println(messages)
+
+}
+
+func handlePanic() {
+	if r := recover(); r != nil {
+		fmt.Println("Выполнилась handlePanic()")
+		fmt.Println(r)
+	}
 }
 
 // matrix := make([][]string, 5)
